@@ -11,7 +11,7 @@ export interface AIResponse {
 })
 export class AiService {
 
-  private apiUrl = 'http://localhost:3000/api/chat';
+  private apiUrl = 'https://anshika-portfolio-backend.vercel.app/api/chat';
 
   constructor(private http: HttpClient) {}
 
