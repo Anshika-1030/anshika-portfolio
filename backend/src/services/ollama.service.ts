@@ -1,5 +1,5 @@
 import { ChatOllama } from "@langchain/ollama";
-import { getResumeText } from "./resume-parser.service.js";
+
 
 const model = new ChatOllama({
   model: "llama3.2:1b",
@@ -621,6 +621,9 @@ function getExperienceResponse(
 export async function askPortfolioAI(
   question: string
 ): Promise<string> {
+
+  const { getResumeText } =
+    await import("./resume-parser.service.js");
 
   const resume = await getResumeText();
 
