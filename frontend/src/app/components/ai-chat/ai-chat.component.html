@@ -1,0 +1,82 @@
+<section id="ai" class="ai-section">
+
+  <div class="section-container">
+
+    <div class="section-number">
+      05 — AI ASSISTANT
+    </div>
+
+    <h2>Ask Anshika's AI.</h2>
+
+    <p class="section-description">
+      Ask questions about Anshika's skills, projects, experience and
+      technical background.
+    </p>
+
+    <div class="chat-box">
+
+      <div
+        class="message"
+        *ngFor="let item of messages"
+        [class.user-message]="item.role === 'user'"
+        [class.ai-message]="item.role === 'ai'"
+      >
+
+        <div class="message-role">
+          {{ item.role === 'user' ? 'YOU' : 'AI' }}
+        </div>
+
+        <div class="message-text">
+          {{ item.message }}
+        </div>
+
+      </div>
+
+      <div class="typing" *ngIf="loading">
+        AI is thinking...
+      </div>
+
+    </div>
+
+    <div class="suggestions">
+
+      <button
+        type="button"
+        (click)="askQuestion('What technologies does Anshika know?')">
+        What technologies does Anshika know?
+      </button>
+
+      <button
+        type="button"
+        (click)="askQuestion('Tell me about Anshika projects.')">
+        Tell me about Anshika's projects.
+      </button>
+
+      <button
+        type="button"
+        (click)="askQuestion('Does Anshika have .NET experience?')">
+        Does Anshika have .NET experience?
+      </button>
+
+    </div>
+
+    <div class="chat-input">
+
+      <input
+        [(ngModel)]="question"
+        (keyup.enter)="askQuestion()"
+        placeholder="Ask something about Anshika..."
+      />
+
+      <button
+        type="button"
+        [disabled]="loading"
+        (click)="askQuestion()">
+        {{ loading ? 'Thinking...' : 'Send' }}
+      </button>
+
+    </div>
+
+  </div>
+
+</section>

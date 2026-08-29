@@ -1,0 +1,19 @@
+{
+  "name": "Anshika",
+  "title": ".NET Developer | AI Developer",
+  "summary": "I am a software developer specializing in .NET, C#, ASP.NET Core, Angular and AI technologies.",
+  "skills": [
+    "C#",
+    ".NET",
+    "ASP.NET Core",
+    "Web API",
+    "REST API",
+    "Angular",
+    "TypeScript",
+    "JavaScript",
+    "SQL Server",
+    "Ollama",
+    "LLM",
+    "LangGraph"
+  ]
+}

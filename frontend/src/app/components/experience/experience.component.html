@@ -1,0 +1,62 @@
+<section id="experience" class="section">
+
+  <div class="section-container">
+
+    <div class="section-label">
+      04 — EXPERIENCE
+    </div>
+
+    <h2 class="section-title">
+      Professional journey.
+    </h2>
+
+    <div class="timeline">
+
+      <article
+        class="experience-card"
+        *ngFor="let experience of experiences">
+
+        <div class="timeline-dot"></div>
+
+        <div class="experience-header">
+
+          <div>
+
+            <h3>
+              {{ experience.role }}
+            </h3>
+
+            <div class="company">
+              {{ experience.company }}
+            </div>
+
+          </div>
+
+          <div class="period">
+            {{ experience.period }}
+          </div>
+
+        </div>
+
+        <p>
+          {{ experience.description }}
+        </p>
+
+        <div class="experience-tags">
+
+          <span
+            *ngFor="let tech of experience.technologies">
+
+            {{ tech }}
+
+          </span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>

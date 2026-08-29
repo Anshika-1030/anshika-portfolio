@@ -1,0 +1,154 @@
+.projects-section {
+  padding: 130px 24px;
+  background: #08080c;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-number {
+  color: #8b72ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+  margin-bottom: 55px;
+}
+
+h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.section-heading p {
+  max-width: 420px;
+  margin: 0;
+  color: #8f8f9d;
+  line-height: 1.7;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  min-height: 390px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #101014;
+  border: 1px solid #282832;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: #7c5cff;
+  background: #121218;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-index {
+  color: #666674;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.github-icon {
+  color: #a99cff;
+  font-size: 24px;
+}
+
+.project-card h3 {
+  margin: 45px 0 15px;
+
+  color: #ffffff;
+
+  font-size: 26px;
+}
+
+.project-card p {
+  color: #8f8f9d;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.technologies span {
+  padding: 6px 10px;
+
+  background: #191920;
+
+  border: 1px solid #292933;
+
+  border-radius: 6px;
+
+  color: #aaaab7;
+
+  font-size: 12px;
+}
+
+.project-link {
+  margin-top: 25px;
+
+  color: #9b88ff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading p {
+    margin-top: 20px;
+  }
+
+}

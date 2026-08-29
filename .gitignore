@@ -1,0 +1,49 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Build output
+dist/
+**/dist/
+build/
+out/
+
+# Angular
+.angular/
+.cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+
+# .NET
+bin/
+obj/
+
+# Coverage
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,92 @@
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 24px 80px;
+
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(124, 92, 255, 0.15),
+      transparent 35%
+    ),
+    #08080c;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: #8b72ff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 25px;
+}
+
+h1 {
+  max-width: 900px;
+
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.02;
+
+  margin: 0;
+
+  color: white;
+  letter-spacing: -3px;
+}
+
+h1 span {
+  display: block;
+  color: #7c5cff;
+}
+
+p {
+  max-width: 700px;
+
+  margin-top: 30px;
+
+  color: #9696a4;
+
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+
+  margin-top: 38px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 24px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+}
+
+.primary-btn {
+  background: #7c5cff;
+  color: white;
+}
+
+.secondary-btn {
+  border: 1px solid #30303c;
+  color: white;
+}
+
+.secondary-btn:hover {
+  border-color: #7c5cff;
+}
