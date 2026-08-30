@@ -167,10 +167,10 @@ export const portfolioData = {
 
   projects: [
     {
-      name: "YouTube Clone .NET",
+      name: "Omnirecruit",
 
       description:
-        "A YouTube-style application developed using .NET technologies.",
+        "The end-to-end hiring workflow engine (test → scoring → interview → final selection).",
 
       technologies: [
         ".NET",
@@ -182,10 +182,10 @@ export const portfolioData = {
     },
 
     {
-      name: "API Rate Limiting Authentication System",
+      name: "Performance Management System",
 
       description:
-        "An API project implementing authentication and rate limiting.",
+        "A role-based goal-management platform supporting 1,000+ employees across the organization.",
 
       technologies: [
         ".NET",

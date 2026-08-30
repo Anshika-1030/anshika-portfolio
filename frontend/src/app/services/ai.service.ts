@@ -23,15 +23,91 @@ export class AiService {
 
 
     // =====================================================
+    // PROJECTS
+    // IMPORTANT:
+    // This must come BEFORE "ABOUT ANSHIKA"
+    // because "tell me about anshika projects"
+    // contains "about anshika".
+    // =====================================================
+
+    if (
+      q.includes('project') ||
+      q.includes('projects') ||
+      q.includes('portfolio project') ||
+      q.includes('portfolio projects') ||
+      q.includes('her project') ||
+      q.includes('her projects') ||
+      q.includes('anshika project') ||
+      q.includes('anshika projects') ||
+      q.includes('projects has anshika worked') ||
+      q.includes('what projects has anshika worked on') ||
+      q.includes('tell me about anshika projects') ||
+      q.includes('tell me about her projects') ||
+      q.includes('what projects did anshika') ||
+      q.includes('what projects has she') ||
+      q.includes('what has anshika built') ||
+      q.includes('what has she built') ||
+      q.includes('what has anshika developed') ||
+      q.includes('what has she developed') ||
+      q.includes('built by anshika') ||
+      q.includes('developed by anshika')
+    ) {
+
+      if (
+        portfolioData.projects &&
+        portfolioData.projects.length > 0
+      ) {
+
+        return of({
+          response:
+            `Anshika has worked on the following projects:\n\n` +
+            portfolioData.projects
+              .map(project => {
+
+                let result =
+                  `• ${project.name}\n` +
+                  `  ${project.description}`;
+
+                if (
+                  project.technologies &&
+                  project.technologies.length > 0
+                ) {
+                  result +=
+                    `\n  Technologies: ` +
+                    project.technologies.join(', ');
+                }
+
+                return result;
+              })
+              .join('\n\n')
+        });
+
+      }
+
+      return of({
+        response:
+          `Anshika's project information is not available in the portfolio data.`
+      });
+    }
+
+
+    // =====================================================
     // ABOUT ANSHIKA
     // =====================================================
 
     if (
-      q.includes('who is anshika') ||
-      q.includes('about anshika') ||
-      q.includes('tell me about anshika') ||
-      q.includes('introduce anshika')
+      q === 'anshika' ||
+      q === 'who is anshika' ||
+      q === 'who is anshika gupta' ||
+      q === 'about anshika' ||
+      q === 'tell me about anshika' ||
+      q === 'tell me about anshika gupta' ||
+      q === 'introduce anshika' ||
+      q === 'introduce anshika gupta' ||
+      q === 'who is she' ||
+      q === 'tell me about her'
     ) {
+
       return of({
         response:
           `${portfolioData.name} is a ${portfolioData.role} at ` +
@@ -45,15 +121,18 @@ export class AiService {
     // COLLEGE
     // =====================================================
 
-    if (
-      q.includes('which college') ||
-      q.includes('what college') ||
-      q.includes('college did anshika attend') ||
-      q.includes('college did she attend') ||
-      q.includes('where did anshika study') ||
-      q.includes('where did she study') ||
-      q.includes('college name')
-    ) {
+    if ( q === 'college' || 
+        q === 'college name' || 
+        q.includes('which college') || 
+        q.includes('what college') || 
+        q.includes('which college did anshika attend') || 
+        q.includes('what college did anshika attend') || 
+        q.includes('college did anshika attend') || 
+        q.includes('college did she attend') || 
+        q.includes('where did anshika study') || 
+        q.includes('where did she study') || 
+        q.includes('what is anshika college') || 
+        q.includes('what is her college') ){
 
       if (portfolioData.education.college) {
         return of({
@@ -124,36 +203,6 @@ export class AiService {
 
 
     // =====================================================
-    // PASSOUT / GRADUATION YEAR
-    // =====================================================
-
-    if (
-      q.includes('passout') ||
-      q.includes('pass out') ||
-      q.includes('pass-out') ||
-      q.includes('graduation year') ||
-      q.includes('which year did she graduate') ||
-      q.includes('when did she graduate') ||
-      q.includes('when did anshika graduate') ||
-      q.includes('college passout year') ||
-      q.includes('graduated in which year')
-    ) {
-
-      if (portfolioData.education.graduationYear) {
-        return of({
-          response:
-            `Anshika graduated in ${portfolioData.education.graduationYear}.`
-        });
-      }
-
-      return of({
-        response:
-          `Anshika's graduation year is not available in the portfolio data.`
-      });
-    }
-
-
-    // =====================================================
     // COMPLETE EDUCATION
     // =====================================================
 
@@ -161,7 +210,9 @@ export class AiService {
       q === 'education' ||
       q.includes('educational background') ||
       q.includes('academic background') ||
-      q.includes('tell me about her education')
+      q.includes('tell me about her education') ||
+      q.includes('tell me about anshika education') ||
+      q.includes('education details')
     ) {
 
       const education = portfolioData.education;
@@ -197,6 +248,37 @@ export class AiService {
         response:
           `Anshika's education details are:\n\n` +
           details.join('\n')
+      });
+    }
+
+
+    // =====================================================
+    // PASSOUT / GRADUATION YEAR
+    // =====================================================
+
+    if (
+      q.includes('passout') ||
+      q.includes('pass out') ||
+      q.includes('pass-out') ||
+      q.includes('graduation year') ||
+      q.includes('which year did she graduate') ||
+      q.includes('when did she graduate') ||
+      q.includes('when did anshika graduate') ||
+      q.includes('college passout year') ||
+      q.includes('graduated in which year') ||
+      q.includes('college year')
+    ) {
+
+      if (portfolioData.education.graduationYear) {
+        return of({
+          response:
+            `Anshika graduated in ${portfolioData.education.graduationYear}.`
+        });
+      }
+
+      return of({
+        response:
+          `Anshika's graduation year is not available in the portfolio data.`
       });
     }
 
@@ -273,14 +355,33 @@ export class AiService {
     // CURRENT COMPANY
     // =====================================================
 
-    if (
-      q.includes('current company') ||
-      q.includes('which company is anshika working') ||
-      q.includes('which company does anshika work') ||
-      q.includes('where is anshika working') ||
-      q.includes('where does anshika work') ||
-      q.includes('where does she work')
-    ) {
+    if ( q === 'company' || 
+        q === 'organization' || 
+        q === 'organisation' || 
+        q === 'company name' || 
+        q === 'organization name' || 
+        q === 'organisation name' || 
+        q.includes('current company') || 
+        q.includes('current organization') || 
+        q.includes('current organisation') || 
+        q.includes('which company does anshika work') || 
+        q.includes('which company is anshika working') || 
+        q.includes('which organization does anshika work') || 
+        q.includes('which organisation does anshika work') || 
+        q.includes('where does anshika work') || 
+        q.includes('where is anshika working') || 
+        q.includes('what company does anshika work for') || 
+        q.includes('what organization does anshika work for') || 
+        q.includes('what organisation does anshika work for') || 
+        q.includes('what is anshika company') || 
+        q.includes('what is anshika organization') || 
+        q.includes('what is anshika organisation') || 
+        q.includes('what is her company') || 
+        q.includes('what is her organization') || 
+        q.includes('what is her organisation') || 
+        q.includes('company does she work') || 
+        q.includes('organization does she work') || 
+        q.includes('organisation does she work') ){
 
       return of({
         response:
@@ -371,7 +472,10 @@ export class AiService {
       q.includes('total experience') ||
       q.includes('experience does anshika have') ||
       q.includes('professional experience') ||
-      q.includes('career experience')
+      q.includes('career experience') ||
+      q === 'experience' ||
+      q.includes('previous work') ||
+      q.includes('previous works')
     ) {
 
       return of({
@@ -488,7 +592,8 @@ export class AiService {
       q.includes('what technologies has she worked with') ||
       q.includes('technologies has anshika') ||
       q.includes('technologies does anshika') ||
-      q.includes('skills does anshika')
+      q.includes('skills does anshika') ||
+      q.includes('skills has anshika')
     ) {
 
       return of({
@@ -609,189 +714,154 @@ export class AiService {
 
 
     // =====================================================
-    // PROJECTS
-    // =====================================================
-
-    if (
-      q.includes('project') ||
-      q.includes('projects') ||
-      q.includes('built') ||
-      q.includes('developed') ||
-      q.includes('what has anshika built') ||
-      q.includes('what projects has she worked on')
-    ) {
-
-      return of({
-        response:
-          `Anshika has worked on the following projects:\n\n` +
-          portfolioData.projects
-            .map(project => {
-
-              let result =
-                `• ${project.name}\n` +
-                `  ${project.description}`;
-
-              if (
-                project.technologies &&
-                project.technologies.length > 0
-              ) {
-                result +=
-                  `\n  Technologies: ` +
-                  project.technologies.join(', ');
-              }
-
-              return result;
-
-            })
-            .join('\n\n')
-      });
-    }
-
-
-    // =====================================================
     // INDIVIDUAL TECHNOLOGY
     // =====================================================
 
     const technologyAliases: Record<string, string[]> = {
 
-      ".NET": [
-        ".net",
-        "dot net",
-        "dotnet"
+      '.NET': [
+        '.net',
+        'dot net',
+        'dotnet'
       ],
 
-      "C#": [
-        "c#",
-        "c sharp",
-        "csharp"
+      'C#': [
+        'c#',
+        'c sharp',
+        'csharp'
       ],
 
-      "ASP.NET": [
-        "asp.net",
-        "asp net",
-        "aspnet"
+      'ASP.NET': [
+        'asp.net',
+        'asp net',
+        'aspnet'
       ],
 
-      "ASP.NET Core": [
-        "asp.net core",
-        "asp net core"
+      'ASP.NET Core': [
+        'asp.net core',
+        'asp net core'
       ],
 
-      "Web API": [
-        "web api",
-        "webapi"
+      'Web API': [
+        'web api',
+        'webapi'
       ],
 
-      "REST API": [
-        "rest api",
-        "restful api",
-        "restful services"
+      'REST API': [
+        'rest api',
+        'restful api',
+        'restful services'
       ],
 
-      "MVC": [
-        "mvc",
-        "asp.net mvc"
+      'MVC': [
+        'mvc',
+        'asp.net mvc'
       ],
 
-      "Angular": [
-        "angular"
+      'Angular': [
+        'angular'
       ],
 
-      "TypeScript": [
-        "typescript",
-        "type script"
+      'TypeScript': [
+        'typescript',
+        'type script'
       ],
 
-      "JavaScript": [
-        "javascript",
-        "java script"
+      'JavaScript': [
+        'javascript',
+        'java script'
       ],
 
-      "HTML": [
-        "html"
+      'HTML': [
+        'html'
       ],
 
-      "CSS": [
-        "css"
+      'CSS': [
+        'css'
       ],
 
-      "Bootstrap": [
-        "bootstrap"
+      'Bootstrap': [
+        'bootstrap'
       ],
 
-      "jQuery": [
-        "jquery"
+      'jQuery': [
+        'jquery'
       ],
 
-      "AJAX": [
-        "ajax"
+      'AJAX': [
+        'ajax'
       ],
 
-      "SQL Server": [
-        "sql server",
-        "sqlserver"
+      'SQL Server': [
+        'sql server',
+        'sqlserver'
       ],
 
-      "Entity Framework": [
-        "entity framework",
-        "entityframework"
+      'Entity Framework': [
+        'entity framework',
+        'entityframework'
       ],
 
-      "Azure": [
-        "azure",
-        "microsoft azure"
+      'Azure': [
+        'azure',
+        'microsoft azure'
       ],
 
-      "AWS": [
-        "aws",
-        "amazon web services"
+      'AWS': [
+        'aws',
+        'amazon web services'
       ],
 
-      "Docker": [
-        "docker"
+      'Docker': [
+        'docker'
       ],
 
-      "Git": [
-        "git"
+      'Git': [
+        'git'
       ],
 
-      "GitHub": [
-        "github",
-        "git hub"
+      'GitHub': [
+        'github',
+        'git hub'
       ],
 
-      "CI/CD": [
-        "ci cd",
-        "ci/cd",
-        "continuous integration",
-        "continuous deployment"
+      'CI/CD': [
+        'ci cd',
+        'ci/cd',
+        'continuous integration',
+        'continuous deployment'
       ],
 
-      "Microservices": [
-        "microservices",
-        "microservice"
+      'Microservices': [
+        'microservices',
+        'microservice'
       ],
 
-      "Agile": [
-        "agile"
+      'Agile': [
+        'agile'
       ],
 
-      "Claude": [
-        "claude"
+      'Claude': [
+        'claude'
       ],
 
-      "GitHub Copilot": [
-        "github copilot",
-        "copilot"
+      'GitHub Copilot': [
+        'github copilot',
+        'copilot'
       ],
 
-      "LLM": [
-        "llm",
-        "large language model"
+      'LLM': [
+        'llm',
+        'large language model'
       ],
 
-      "Ollama": [
-        "ollama"
+      'Ollama': [
+        'ollama'
+      ],
+
+      'AI': [
+        'ai',
+        'artificial intelligence'
       ]
     };
 
@@ -802,7 +872,7 @@ export class AiService {
     ) {
 
       const found = aliases.some(alias =>
-        q.includes(alias)
+        q.includes(alias.toLowerCase())
       );
 
       if (found) {
