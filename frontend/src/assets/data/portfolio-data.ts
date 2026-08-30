@@ -5,26 +5,22 @@ export const portfolioData = {
 
   company: "Newgen Software Technologies Limited",
 
-  experience: "almost 3 years",
+  experience: "Almost 3 years",
 
-  /* =====================================================
-     EDUCATION
-  ===================================================== */
+  // =====================================================
+  // EDUCATION
+  // =====================================================
 
   education: {
     degree: "B.Tech",
     college: "Kiet Group of Institutions",
     university: "AKTU",
-    graduationYear: "2024",
-    Branch: "Computer Science and Engineering",
-    Specialization: "Computer Science and Engineering",
-    Grade: "8.0",
-    CGPA: "8.0"
+    graduationYear: "2024"
   },
 
-  /* =====================================================
-     EMPLOYMENT
-  ===================================================== */
+  // =====================================================
+  // EMPLOYMENT
+  // =====================================================
 
   employment: {
     type: "Full-time",
@@ -44,21 +40,33 @@ export const portfolioData = {
     currentRoleStartDate: "July 2024"
   },
 
-  /* =====================================================
-     CONTACT / SOCIAL PROFILES
-  ===================================================== */
+  // =====================================================
+  // INTERNSHIP
+  // =====================================================
 
-  contact: {
-    email: "",
+  internship: {
+    hasInternship: false,
 
-    linkedin: "",
+    company: "Newgen Software Technologies Limited",
 
-    github: ""
+    role: "Software Engineer Trainee",
+
+    duration: "6 months from January 2024 - June 2024",
   },
 
-  /* =====================================================
-     TECHNOLOGIES
-  ===================================================== */
+  // =====================================================
+  // CONTACT / SOCIAL
+  // =====================================================
+
+  contact: {
+    email: "1anshika.india@gmail.com",
+    linkedin: "https://www.linkedin.com/in/anshika-gupta-32566621a",
+    github: "https://github.com/Anshika-1030"
+  },
+
+  // =====================================================
+  // TECHNOLOGIES
+  // =====================================================
 
   technologies: [
     ".NET",
@@ -89,13 +97,12 @@ export const portfolioData = {
     "Claude",
     "GitHub Copilot",
     "LLM",
-    "Ollama",
-    "React"
+    "Ollama"
   ],
 
-  /* =====================================================
-     BACKEND
-  ===================================================== */
+  // =====================================================
+  // BACKEND
+  // =====================================================
 
   backend: [
     ".NET",
@@ -109,9 +116,9 @@ export const portfolioData = {
     "SQL Server"
   ],
 
-  /* =====================================================
-     FRONTEND
-  ===================================================== */
+  // =====================================================
+  // FRONTEND
+  // =====================================================
 
   frontend: [
     "Angular",
@@ -121,22 +128,21 @@ export const portfolioData = {
     "CSS",
     "Bootstrap",
     "jQuery",
-    "AJAX",
-    "React"
+    "AJAX"
   ],
 
-  /* =====================================================
-     DATABASE
-  ===================================================== */
+  // =====================================================
+  // DATABASES
+  // =====================================================
 
   databases: [
     "SQL Server",
     "Entity Framework"
   ],
 
-  /* =====================================================
-     CLOUD / INFRASTRUCTURE
-  ===================================================== */
+  // =====================================================
+  // CLOUD
+  // =====================================================
 
   cloud: [
     "Azure",
@@ -144,9 +150,9 @@ export const portfolioData = {
     "Docker"
   ],
 
-  /* =====================================================
-     AI / LLM
-  ===================================================== */
+  // =====================================================
+  // AI
+  // =====================================================
 
   ai: [
     "LLM",
@@ -155,80 +161,16 @@ export const portfolioData = {
     "GitHub Copilot"
   ],
 
-  /* =====================================================
-     DEVELOPMENT PRACTICES
-  ===================================================== */
-
-  development: [
-    "Git",
-    "GitHub",
-    "CI/CD",
-    "Microservices",
-    "Agile",
-    "RESTful API Development",
-    "API Authentication",
-    "API Authorization",
-    "API Rate Limiting"
-  ],
-
-  /* =====================================================
-     EXPERIENCE DETAILS
-  ===================================================== */
-
-  experienceDetails: [
-    {
-      company: "Newgen Software Technologies Limited",
-
-      role: "Software Engineer",
-
-      employmentType: "Full-time",
-
-      startDate: "July 2024",
-
-      description:
-        "Working as a Software Engineer on software development projects using modern .NET and web technologies."
-    },
-    {
-      company: "Newgen Software Technologies Limited",
-
-      role: "Software Engineer Trainee",
-
-      employmentType: "Full-time",
-
-      startDate: "January 2024",
-
-      endDate: "June 2024",
-
-      description:
-        "Started professional career as a Software Engineer Trainee."
-    }
-  ],
-
-  /* =====================================================
-     INTERNSHIP
-  ===================================================== */
-
-  internship: {
-    hasInternship: false,
-
-    company: "Newgen Software Technologies Limited",
-
-    role: "Software Engineer Trainee",
-
-    duration: "6 months from January 2024 - June 2024",
-
-  },
-
-  /* =====================================================
-     PROJECTS
-  ===================================================== */
+  // =====================================================
+  // PROJECTS
+  // =====================================================
 
   projects: [
     {
       name: "YouTube Clone .NET",
 
       description:
-        "A YouTube-inspired application developed using .NET technologies and web development concepts.",
+        "A YouTube-style application developed using .NET technologies.",
 
       technologies: [
         ".NET",
@@ -240,10 +182,10 @@ export const portfolioData = {
     },
 
     {
-      name: "API Rate Limiting & Authentication System",
+      name: "API Rate Limiting Authentication System",
 
       description:
-        "A backend project demonstrating API authentication, authorization and rate-limiting concepts.",
+        "An API project implementing authentication and rate limiting.",
 
       technologies: [
         ".NET",
